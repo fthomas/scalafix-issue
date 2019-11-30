@@ -1,0 +1,8 @@
+language: scala
+jdk:
+- openjdk8
+scala:
+- 2.12.10
+- 2.13.1
+script:
+- sbt ";++$TRAVIS_SCALA_VERSION ;scalafixEnable ;test:scalafix https://raw.githubusercontent.com/scalatest/autofix/e4de53fa40fac423bd64d165ff36bde38ce52388/3.0.x/rules/src/main/scala/org/scalatest/autofix/v3_0_x/RenameDeprecatedPackage.scala"
